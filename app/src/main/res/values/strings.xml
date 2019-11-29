@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">A3Chat</string>
+    <string name="nickname_key">nickname</string>
+    <string name="preferences_key">preferences</string>
 </resources>
