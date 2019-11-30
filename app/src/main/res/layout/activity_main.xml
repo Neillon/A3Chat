@@ -101,6 +101,7 @@
             app:srcCompat="@drawable/ic_arrow_forward_black_24dp"
             android:backgroundTint="@color/colorPrimaryDark"
             app:borderWidth="0dp"
+            android:onClick="logIn"
             app:layout_anchor="@id/bar"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
