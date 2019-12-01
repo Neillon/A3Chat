@@ -119,8 +119,9 @@ public class MainActivity extends AppCompatActivity {
     private void verifyUserAlreadyLogged() {
         sharedPreferences = getSharedPreferences(getString(R.string.preferences_key), Context.MODE_PRIVATE);
         String nickname = sharedPreferences.getString(getString(R.string.nickname_key), "");
+        Boolean stayConnected = sharedPreferences.getBoolean(getString(R.string.stay_connected), true);
 
-        if (!nickname.equals("")){
+        if (!nickname.equals("") && stayConnected){
             Intent i = new Intent(MainActivity.this, HomeActivity.class);
             i.putExtra("nickname", nickname);
             finish();
@@ -134,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString(getString(R.string.nickname_key), nickname);
+            editor.putBoolean(getString(R.string.stay_connected), keepConectedSwitcher.isChecked());
             editor.apply();
         }
     }

@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">A3Chat</string>
     <string name="nickname_key">nickname</string>
+    <string name="stay_connected">stay_connected</string>
     <string name="preferences_key">preferences</string>
     <string name="a3">A3</string>
     <string name="aboutString">Trabalho final da disciplina Desenvolvimento Mobile.</string>
+    <string name="default_profile_image"><![CDATA[https://firebasestorage.googleapis.com/v0/b/a3chat-326b5.appspot.com/o/default-profile.png?alt=media&token=95c5f032-19e6-4921-a6fd-26d88d1d461c]]></string>
 </resources>
