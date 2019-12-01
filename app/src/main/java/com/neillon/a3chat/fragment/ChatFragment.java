@@ -36,7 +36,7 @@ public class ChatFragment extends Fragment {
     private RecycleViewAdapter adapter;
     private List<Chat> list = new ArrayList<>();
 
-    private String nickname;
+    public static String nickname;
 
     public ChatFragment(String nickname) {
         this.nickname = nickname;
