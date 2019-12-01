@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Sair"
+        android:id="@+id/menuSair"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"/>
+
+    <item android:title="Sobre"
+        android:id="@+id/menuSobre"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_info_outline_black_24dp"/>
+</menu>

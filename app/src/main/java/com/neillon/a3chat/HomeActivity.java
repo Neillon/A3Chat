@@ -1,12 +1,18 @@
 package com.neillon.a3chat;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.transition.Explode;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -61,4 +67,41 @@ public class HomeActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.fragment_tabs);
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_home, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent i;
+        switch (item.getItemId()){
+            case R.id.menuSobre:
+                i = new Intent(HomeActivity.this, AboutActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.menuSair:
+                eraseSharedPreferences();
+                i = new Intent(HomeActivity.this, MainActivity.class);
+                getWindow().setExitTransition(new Explode());
+                startActivity(i, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                finish();
+
+            return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    private void eraseSharedPreferences() {
+        sharedPreferences = getSharedPreferences(getString(R.string.preferences_key), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+    }
 }

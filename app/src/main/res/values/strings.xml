@@ -2,4 +2,6 @@
     <string name="app_name">A3Chat</string>
     <string name="nickname_key">nickname</string>
     <string name="preferences_key">preferences</string>
+    <string name="a3">A3</string>
+    <string name="aboutString">Trabalho final da disciplina Desenvolvimento Mobile.</string>
 </resources>

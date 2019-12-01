@@ -1,10 +1,17 @@
 package com.neillon.a3chat.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -55,6 +62,8 @@ public class ChatFragment extends Fragment {
         initializeViewComponents();
         listenerChat();
         setRecyclerViewChat();
+
+        txtMessage.setInputType(InputType.TYPE_TEXT_FLAG_IME_MULTI_LINE);
 
         btnSendMessage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,6 +119,8 @@ public class ChatFragment extends Fragment {
                     }
                 });
     }
+
+
 
     private void sendMessage(String nickname, String message) {
         final Chat sendedMessage = new Chat(nickname, message);
