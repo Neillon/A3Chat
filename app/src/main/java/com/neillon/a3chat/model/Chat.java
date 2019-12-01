@@ -1,20 +1,20 @@
 package com.neillon.a3chat.model;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 
 public class Chat implements Serializable {
 
-    private String id, name, message;
+    private String name;
+    private String message;
 
     public Chat() {
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public Chat(String name, String message) {
+        this.name = name;
+        this.message = message;
     }
 
     public String getName() {
@@ -31,5 +31,12 @@ public class Chat implements Serializable {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return  "[NAME]: " + this.name + "\n" +
+                "[MESSAGE]: " + this.message;
     }
 }

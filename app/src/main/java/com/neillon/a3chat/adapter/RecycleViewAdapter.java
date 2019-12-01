@@ -49,19 +49,21 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         Chat chat = listChat.get(position);
         holder.message.setText(chat.getMessage());
 
-        if(chat.getName().trim().equals(verifyUserLogin())) {
+        if (chat.getName().trim().equals(getUserNickname())) {
             holder.name.setVisibility(View.GONE);
             holder.itemView.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
             holder.name.setTextColor(context.getColor(R.color.colorPrimaryDark));
             holder.name.setPadding(12,6,36,6);
             holder.message.setPadding(12,1,36,6);
             holder.relativeBackground.setBackground(context.getDrawable(R.drawable.bubble_out));
-        }else {
-            holder.name.setText(chat.getName());
+        } else {
+            holder.name.setVisibility(View.VISIBLE);
+            holder.itemView.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
             holder.name.setTextColor(context.getColor(R.color.colorAccent));
             holder.name.setPadding(36,6,12,6);
             holder.message.setPadding(36,1,12,6);
             holder.relativeBackground.setBackground(context.getDrawable(R.drawable.bubble_in));
+            holder.name.setText(chat.getName());
         }
     }
 
@@ -82,9 +84,8 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         }
     }
 
-    public String verifyUserLogin () {
+    public String getUserNickname () {
         String nickname = sharedPreferences.getString(context.getString(R.string.nickname_key), "");
-        Log.i("NICKNAME", nickname);
         return nickname;
     }
 }
