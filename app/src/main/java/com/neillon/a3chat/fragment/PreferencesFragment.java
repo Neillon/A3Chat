@@ -1,6 +1,5 @@
 package com.neillon.a3chat.fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
@@ -13,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -21,15 +21,12 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask.TaskSnapshot;
 import com.neillon.a3chat.R;
 import com.neillon.a3chat.configuration.FirestorageConfiguration;
-import com.neillon.a3chat.configuration.FirestoreConfiguration;
 import com.neillon.a3chat.dao.UserDao;
 
 import java.io.FileNotFoundException;
@@ -43,6 +40,7 @@ public class PreferencesFragment extends Fragment {
     private Button cancel, saveOrEdit;
     public ImageView imgProfile;
     public EditText nickname;
+    private ProgressBar spinner;
 
     private Uri imageUri;
 
@@ -58,6 +56,7 @@ public class PreferencesFragment extends Fragment {
         this.nickname = (EditText) rootView.findViewById(R.id.txt_nickname_profile);
         this.cancel = (Button) rootView.findViewById(R.id.btn_cancel_profile);
         this.saveOrEdit = (Button) rootView.findViewById(R.id.btn_save_or_edit_profile);
+        this.spinner = (ProgressBar) rootView.findViewById(R.id.progressBar);
 
         getUser();
         editEvent();
@@ -124,6 +123,7 @@ public class PreferencesFragment extends Fragment {
     }
 
     public void saveChangesUser() {
+        spinner.setVisibility(View.VISIBLE);
         if (this.originalNickname != null && !this.originalNickname.equalsIgnoreCase(this.nickname.getText().toString())) {
             UserDao.getUsers(this.nickname.getText().toString()).addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 public void onComplete(Task<QuerySnapshot> task) {
@@ -133,6 +133,7 @@ public class PreferencesFragment extends Fragment {
                     if (task.getResult().getDocuments().size() == 0) {
                         uploadImage();
                     } else {
+                        spinner.setVisibility(View.GONE);
                         Toast.makeText(getActivity(), "O nickname já está sendo utilizado.", Toast.LENGTH_LONG).show();
                     }
                 }
@@ -163,6 +164,7 @@ public class PreferencesFragment extends Fragment {
                     if (task.isSuccessful()) {
                         updateUser((Uri) task.getResult());
                     } else {
+                        spinner.setVisibility(View.GONE);
                         Toast.makeText(getActivity(), "Erro ao fazer upload da imagem", Toast.LENGTH_LONG).show();
                     }
                 }
@@ -185,6 +187,7 @@ public class PreferencesFragment extends Fragment {
                     savePreferences(originalNickname);
                 }
                 editEvent();
+                spinner.setVisibility(View.GONE);
             }
         });
     }
