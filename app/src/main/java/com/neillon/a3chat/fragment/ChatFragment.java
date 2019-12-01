@@ -65,7 +65,7 @@ public class ChatFragment extends Fragment {
     }
 
     private void listenerChat () {
-        
+
         Chat chat = new Chat();
         chat.setName("Emery");
         chat.setMessage("Sua mãe me traiu");
