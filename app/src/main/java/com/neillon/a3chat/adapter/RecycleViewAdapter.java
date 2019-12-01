@@ -63,7 +63,13 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             holder.name.setPadding(36,6,12,6);
             holder.message.setPadding(36,1,12,6);
             holder.relativeBackground.setBackground(context.getDrawable(R.drawable.bubble_in));
-            holder.name.setText(chat.getName());
+            
+            if(position >= 2 && listChat.get(position-1).getName().equals(chat.getName())) {
+                holder.name.setVisibility(View.GONE);
+
+            }else {
+                holder.name.setText(chat.getName());
+            }
         }
     }
 
