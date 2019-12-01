@@ -3,6 +3,8 @@
     <color name="colorPrimary">#292929</color>
     <color name="colorPrimaryDark">#815DB3</color>
     <color name="colorAccent">#53B89B</color>
-
     <color name="white">#FFF</color>
+    <color name="colorShadowBackground">#C3815DB3</color>
+    <color name="colorChatBackground">#F7F7F7</color>
+    <color name="colorBubble">#F7FFFFFF</color>
 </resources>

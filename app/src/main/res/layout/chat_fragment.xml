@@ -4,34 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@color/colorChatBackground"
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_chat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="8dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_layout_nickname"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
             android:textColorHint="@color/colorPrimaryDark"
             app:boxStrokeColor="@color/colorPrimaryDark"
             app:boxStrokeWidth="2dp"
-            app:hintTextColor="@color/colorPrimaryDark"
-            android:layout_centerVertical="true">
+            app:hintTextColor="@color/colorPrimaryDark">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txt_message"
@@ -50,12 +57,12 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="6dp"
+            android:padding="6dp"
             android:text="Send"
             android:textColor="@color/colorAccent"
-            app:rippleColor="@color/colorAccent"
-            android:padding="6dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginRight="6dp"/>
+            app:rippleColor="@color/colorAccent" />
 
     </RelativeLayout>
 

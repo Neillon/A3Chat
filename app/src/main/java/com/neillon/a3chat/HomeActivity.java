@@ -1,6 +1,7 @@
 package com.neillon.a3chat;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
@@ -20,7 +21,6 @@ public class HomeActivity extends AppCompatActivity {
     private TabAdapter adapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-
     private SharedPreferences sharedPreferences;
 
     @Override

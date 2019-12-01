@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    >
+
+    <RelativeLayout
+
+        android:id="@+id/relativeBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtChatName"
+            android:text="Roberto Carlos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:padding="2dp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:text="Tufeira boca ensaboada"
+            android:id="@+id/txtChatMessage"
+            android:layout_below="@+id/txtChatName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
