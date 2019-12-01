@@ -1,7 +1,6 @@
 package com.neillon.a3chat;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
@@ -11,7 +10,6 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.textview.MaterialTextView;
 import com.neillon.a3chat.adapter.TabAdapter;
 import com.neillon.a3chat.fragment.ChatFragment;
 import com.neillon.a3chat.fragment.PreferencesFragment;
@@ -23,6 +21,8 @@ public class HomeActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private SharedPreferences sharedPreferences;
 
+    private String nickname;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
 
         adapter = new TabAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(new ChatFragment(), "Chat");
+        adapter.addFragment(new ChatFragment(nickname), "Chat");
         adapter.addFragment(new PreferencesFragment(), "Preferences");
 
         viewPager.setAdapter(adapter);
@@ -49,6 +49,8 @@ public class HomeActivity extends AppCompatActivity {
             Toast.makeText(this, "Falha ao abrir aplicação", Toast.LENGTH_SHORT).show();
             finish();
             startActivity(intent);
+        } else {
+            this.nickname = nickname;
         }
     }
 
@@ -58,4 +60,5 @@ public class HomeActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.view_pager);
         tabLayout = findViewById(R.id.fragment_tabs);
     }
+
 }
