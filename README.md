@@ -1,23 +1,23 @@
 # A3Chat
 ## Chat app by A3 Group
-
-** Discipline: Mobile Development |  Teacher: Diego Catalano
+<br/>
+** Discipline: Mobile Development |  Teacher: Diego Catalano **
 <br/>
 This repository has the code for the final work of the Android Development class, created by group A3:
 <br/>
-** Resources Used: 
+** Resources Used: **
 
 *  Cloud Firestore
 *  Realtime Database
 *  Firebase Storage
 *  Google Material Design
 
-** Members: 
+** Members: **
 *  Neillon Cesar
 *  Wandersson Barros
 *  Rayller Emery
 <br/>
-** ScreenShoots:
+** ScreenShoots:**
 
 [link](https://drive.google.com/open?id=1t2ScuvZk7Xv1PgZifM2_IAevZe2GoD43)
 
