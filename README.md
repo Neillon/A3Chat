@@ -1,16 +1,26 @@
-# A3Chat - Conversas em Grupo
+# A3Chat
+## Chat app by A3
+## Discipline: Mobile Development
+## Teacher: Diego Catalano
 
-Trabalho final da disciplina de Desenvolvimento Mobile
+This repository has the code for the final work of the Android Development class, created by group A3:
 
-## Recursos utilizados
+## Resources Used: ([link](https://www.coursera.org/learn/linear-algebra-machine-learning))
 
-* Cloud Firestore ([link](https://firebase.google.com/docs/firestore?hl=pt-br))
-* Realtime Database ([link](https://firebase.google.com/docs/database?hl=pt-br))
-* Cloud Storage ([link](https://firebase.google.com/docs/storage))
-* Google Material Design ([link](https://material.io/))
+* ### Cloud Firestore
+* ### Realtime Database
+* ### Firebase Storage
+* ### Google Material Design
 
-## Participantes
+* ### Neillon Cesar
+* ### Wandersson Barros
+* ### Rayller Emery
 
-* Neillon Cesar
-* Rayller Emery
-* Wanderson Mendes
+## ScreenShoots:
+![Log in](https://drive.google.com/open?id=1rt-FlwFdJ86OaBzco1zsllATCki6zrXZ)
+![Chat](https://drive.google.com/open?id=1X0IGg5ov7VmsVv3QqRCh_j1J_CFmLfd7)
+![Preferences](https://drive.google.com/open?id=1WRrgwEOz9zwJF_Wz_VBrQ6bQQ9dHc5tX)
+![About](https://drive.google.com/open?id=1B25buY7KMO-4MbSiQhNSi1QMQqyhT6yx)
+
+
+
