@@ -18,6 +18,6 @@ This repository has the code for the final work of the Android Development class
 
 ## ScreenShoots:
 
-![ss](https://drive.google.com/open?id=1t2ScuvZk7Xv1PgZifM2_IAevZe2GoD43)
+[link](https://drive.google.com/open?id=1t2ScuvZk7Xv1PgZifM2_IAevZe2GoD43)
 
 
